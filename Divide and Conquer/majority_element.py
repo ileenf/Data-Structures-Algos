@@ -1,7 +1,7 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         def divide(nums, begin, end):
-            if end==begin:
+            if end == begin:
                 return nums[end]
             mid = (begin+end)//2
             
