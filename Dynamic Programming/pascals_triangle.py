@@ -2,7 +2,7 @@ class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         rows = [[1]]
         
-        for i in range(0, numRows-1):
+        for i in range(numRows-1):
             prev_row = rows[i] 
             new_row = [1 for _ in range(len(prev_row)+1)]
             
