@@ -17,4 +17,4 @@ class Solution:
                 replace = dp[i-1][j-1] + (word1[i-1] != word2[j-1])
                 dp[i][j] = min(insert, delete, replace)
             
-        return dp[-1][-1]
+        return dp[n][m]
