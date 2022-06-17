@@ -1,9 +1,12 @@
 class Solution:
     def solve(self, s, k):
+        if k == 1:
+            return ''
+        
         stack = []
                 
         for ch in s:
-            if not stack and k != 1:
+            if not stack:
                 stack.append([ch, 1])
             else:
                 if stack:
