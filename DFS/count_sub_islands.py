@@ -27,7 +27,7 @@ class Solution:
         for row in range(rows):
             for col in range(cols):
                 if grid2[row][col] == 1 and grid1[row][col] == 1:
-                    grid2[row][col] = 2
+                    grid2[row][col] = 0
                     if dfs(row, col):
                         sub_islands += 1
                         
