@@ -45,7 +45,7 @@ class Solution:
     # N = number of nested elements
     # time complexity - O(N) since we traverse through each nested component
     # space complexity - O(N) since there will be at most N recursive stacks (worst case 
-    # if entire list was just nesting) and at most N nested elements in queue
+    # if entire list was just nesting) and at most N independent elements in queue
     def depthSum(self, nestedList: List[NestedInteger]) -> int:
         # dfs is more intuitive here
         def dfs(val, depth):
