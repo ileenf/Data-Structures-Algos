@@ -3,6 +3,10 @@
 # def knows(a: int, b: int) -> bool:
 
 class Solution:
+    # time complexity: O(n) iterate n - 1 times, each iteration will remove one element.
+    # popping and adding to set is constant time. 
+    # iterating over n people at the end. O(n) + O(n) = O(n)
+    # space complexity: O(n), storing n people in set
     def findCelebrity(self, n: int) -> int:
         people = {i for i in range(n)}
         
