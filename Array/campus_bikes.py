@@ -19,5 +19,8 @@ class Solution:
             if worker_bike_pos[worker] == -1 and bike not in assigned_bikes:
                 worker_bike_pos[worker] = bike
                 assigned_bikes.add(bike)
+                
+            if len(assigned_bikes) == len(workers):
+                return worker_bike_pos
 
         return worker_bike_pos
