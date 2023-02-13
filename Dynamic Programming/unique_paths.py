@@ -27,3 +27,15 @@ class Solution:
             return 1
         
         return uniquePaths(rows-1, cols) + uniquePaths(rows, cols-1)
+    
+    # recursive + memoization
+    cache = dict()
+    def uniquePaths(self, rows: int, cols: int) -> int:
+        if rows == 1 or cols == 1:
+            return 1
+        
+        if (rows, cols) in self.cache:
+            return self.cache[(rows, cols)]
+        
+        self.cache[(rows, cols)] = self.uniquePaths(rows-1, cols) + self.uniquePaths(rows, cols-1)
+        return self.cache[(rows, cols)]
