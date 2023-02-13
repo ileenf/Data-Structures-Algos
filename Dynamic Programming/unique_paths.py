@@ -20,3 +20,10 @@ class Solution:
             dp2, dp1 = dp1, dp2
       
         return dp1[-1]
+    
+    # recursive solution
+    def uniquePaths(self, rows: int, cols: int) -> int:
+        if rows == 1 or cols == 1:
+            return 1
+        
+        return uniquePaths(rows-1, cols) + uniquePaths(rows, cols-1)
