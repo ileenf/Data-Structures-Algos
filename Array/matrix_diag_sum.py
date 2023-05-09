@@ -2,6 +2,19 @@ class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
         total = 0
 
+        for i in range(len(mat)):
+            total += mat[i][i]
+            total += mat[i][len(mat)-i-1]
+
+        if len(mat) % 2 == 1:
+            total -= mat[len(mat) // 2][len(mat[0]) // 2]
+        return total
+
+
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        total = 0
+
         col_left = 0
         col_right = len(mat[0])-1
 
