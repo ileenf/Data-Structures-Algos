@@ -20,6 +20,7 @@ class Solution:
                 if curr_fruits[fruits[i]] == 0:
                     del curr_fruits[fruits[i]]
                 i += 1
+            # move right pointer always because sliding window is only non decreasing
             j += 1
 
                 
