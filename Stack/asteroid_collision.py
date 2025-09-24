@@ -42,7 +42,7 @@ class Solution:
 
             last_asteroid = state[-1]
             while state and last_asteroid > 0 and asteroid < 0 and abs(last_asteroid) <= abs(asteroid):
-                state.pop(len(state)-1)
+                state.pop()
                 if abs(last_asteroid) == abs(asteroid):
                     break
                 if state:
