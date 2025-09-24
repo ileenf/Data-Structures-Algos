@@ -29,3 +29,28 @@ class Solution:
             if not curr_asteroid_destroyed:
                 stack.append(asteroid)
         return stack
+
+
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        state = []
+
+        for asteroid in asteroids:
+            if not state:
+                state.append(asteroid)
+                continue
+
+            last_asteroid = state[-1]
+            while state and last_asteroid > 0 and asteroid < 0 and abs(last_asteroid) <= abs(asteroid):
+                state.pop(len(state)-1)
+                if abs(last_asteroid) == abs(asteroid):
+                    break
+                if state:
+                    last_asteroid = state[-1]
+            
+            if last_asteroid > 0 and asteroid < 0 and abs(last_asteroid) >= abs(asteroid):
+                continue
+            state.append(asteroid)
+        return state
+        
+
