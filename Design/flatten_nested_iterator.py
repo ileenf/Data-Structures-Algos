@@ -69,3 +69,24 @@ class NestedIterator:
             for nested in reversed(item.getList()):
                 self.stack.append(nested)
         return False
+
+
+## more elegant stack solution
+class NestedIterator:
+    def __init__(self, nestedList: [NestedInteger]):
+        self.stack = list(reversed(nestedList))
+    
+    def make_stack_top_an_integer(self):
+        while self.stack and not self.stack[-1].isInteger():
+            item = self.stack.pop()
+            
+            for nested in reversed(item.getList()):
+                self.stack.append(nested)
+
+    def next(self) -> int:        
+        self.make_stack_top_an_integer()
+        return self.stack.pop()
+
+    def hasNext(self) -> bool:
+        self.make_stack_top_an_integer()
+        return len(self.stack) > 0
